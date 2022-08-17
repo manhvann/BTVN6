@@ -29,7 +29,7 @@ public class QLCB {
     }
 
     public static boolean check1(String str) {
-        for (int i = 0; i <= ListNhanVien.size(); i++) {
+        for (int i = 0; i < ListNhanVien.size(); i++) {
             if (ListNhanVien.contains(str)) return true;
 
         }
@@ -37,7 +37,7 @@ public class QLCB {
     }
 
     public static boolean check2(String str) {
-        for (int i = 0; i <= ListCongNhan.size(); i++) {
+        for (int i = 0; i <ListCongNhan.size(); i++) {
             if (ListCongNhan.contains(str)) return true;
 
         }
@@ -45,7 +45,7 @@ public class QLCB {
     }
 
     public static boolean check3(String str) {
-        for (int i = 0; i <= ListKySu.size(); i++) {
+        for (int i = 0; i <ListKySu.size(); i++) {
             if (ListKySu.contains(str)) return true;
 
         }
@@ -73,40 +73,47 @@ public class QLCB {
     }
 
     public static void HienThi() {
+        if(ListNhanVien.isEmpty()==false)
+        {
         System.out.println("Danh sach can bo nhan vien: ");
         System.out.printf("%-15s%-15s%-15s%-15s%-15s%-15s\n", "id", "Ho ten", "Nam sinh", "Gioi tinh", "Dia chi", "Cong viec");
-        for (int i = 0; i <= ListNhanVien.size(); i++) {
+        for (int i = 0; i < ListNhanVien.size(); i++) {
             ListNhanVien.get(i).xuat();
-        }
+        }}
+        if(ListCongNhan.isEmpty()==false)
+        {
         System.out.println("Danh sach can bo Cong nhan: ");
         System.out.printf("%-15s%-15s%-15s%-15s%-15s%-15s\n", "id", "Ho ten", "Nam sinh", "Gioi tinh", "Dia chi", "Bac");
-        for (int i = 0; i <= ListCongNhan.size(); i++) {
+        for (int i = 0; i < ListCongNhan.size(); i++) {
             ListCongNhan.get(i).xuat();
-        }
+        }}
+        if(ListKySu.isEmpty()==false)
+        {
         System.out.println("Danh sach can bo Ky su: ");
         System.out.printf("%-15s%-15s%-15s%-15s%-15s%-15s\n", "id", "Ho ten", "Nam sinh", "Gioi tinh", "Dia chi", "Nganh dao tao");
-        for (int i = 0; i <= ListKySu.size(); i++) {
+        for (int i = 0; i < ListKySu.size(); i++) {
             ListKySu.get(i).xuat();
-        }
+        }}
     }
 
     public static void Xoa() {
         String idXoa;
+        scanner.nextLine();
         System.out.println("Nhap id can bo can xoa: ");
         idXoa = scanner.nextLine();
-        for (int i = 0; i <= ListNhanVien.size(); i++) {
+        for (int i = 0; i < ListNhanVien.size(); i++) {
             if (ListNhanVien.get(i).getId().equals(idXoa)) {
                 ListNhanVien.remove(i);
                 i--;
             }
         }
-        for (int i = 0; i <= ListCongNhan.size(); i++) {
+        for (int i = 0; i < ListCongNhan.size(); i++) {
             if (ListCongNhan.get(i).getId().equals(idXoa)) {
                 ListCongNhan.remove(i);
                 i--;
             }
         }
-        for (int i = 0; i <= ListKySu.size(); i++) {
+        for (int i = 0; i < ListKySu.size(); i++) {
             if (ListKySu.get(i).getId().equals(idXoa)) {
                 ListKySu.remove(i);
                 i--;
@@ -116,21 +123,25 @@ public class QLCB {
 
     public static void TimKiem() {
         String idTimKiem;
-        System.out.println("Nhap iid can tim kiem: ");
+        scanner.nextLine();
+        System.out.println("Nhap id can tim kiem: ");
         idTimKiem = scanner.nextLine();
-        for (int i = 0; i <= ListNhanVien.size(); i++) {
+        for (int i = 0; i < ListNhanVien.size(); i++) {
             if (ListNhanVien.get(i).getId().equals(idTimKiem)) {
+                System.out.printf("%-15s%-15s%-15s%-15s%-15s%-15s\n", "id", "Ho ten", "Nam sinh", "Gioi tinh", "Dia chi", "Cong viec");
                 ListNhanVien.get(i).xuat();
 
             }
         }
-        for (int i = 0; i <= ListCongNhan.size(); i++) {
+        for (int i = 0; i < ListCongNhan.size(); i++) {
             if (ListCongNhan.get(i).getId().equals(idTimKiem)) {
+                System.out.printf("%-15s%-15s%-15s%-15s%-15s%-15s\n", "id", "Ho ten", "Nam sinh", "Gioi tinh", "Dia chi", "Bac");
                 ListCongNhan.get(i).xuat();
             }
         }
-        for (int i = 0; i <= ListKySu.size(); i++) {
+        for (int i = 0; i < ListKySu.size(); i++) {
             if (ListKySu.get(i).getId().equals(idTimKiem)) {
+                System.out.printf("%-15s%-15s%-15s%-15s%-15s%-15s\n", "id", "Ho ten", "Nam sinh", "Gioi tinh", "Dia chi", "Nganh dao tao");
                 ListKySu.get(i).xuat();
             }
         }
