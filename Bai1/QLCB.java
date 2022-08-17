@@ -30,7 +30,7 @@ public class QLCB {
 
     public static boolean check1(String str) {
         for (int i = 0; i < ListNhanVien.size(); i++) {
-            if (ListNhanVien.contains(str)) return true;
+            if (ListNhanVien.get(i).getId().equals(str)) return true;
 
         }
         return false;
@@ -38,7 +38,7 @@ public class QLCB {
 
     public static boolean check2(String str) {
         for (int i = 0; i <ListCongNhan.size(); i++) {
-            if (ListCongNhan.contains(str)) return true;
+            if (ListCongNhan.get(i).getId().equals(str)) return true;
 
         }
         return false;
@@ -46,7 +46,7 @@ public class QLCB {
 
     public static boolean check3(String str) {
         for (int i = 0; i <ListKySu.size(); i++) {
-            if (ListKySu.contains(str)) return true;
+            if (ListKySu.get(i).getId().equals(str)) return true;
 
         }
         return false;
